@@ -9,13 +9,13 @@ const HomeHeader = () => {
           <Typography 
             align='center'
             color='#0C3640'
-            variant='h3'
+            variant='h2'
           >
             COST ESTIMATION OF A PROJECT
           </Typography>
         </Grid>
         <Grid item xs={1} sm={6}>
-          <Typography>HOL</Typography>
+          <Typography>HOLI BOLI :3</Typography>
           <Image
             src={'/static/pert.jpg'}
             width={200}
