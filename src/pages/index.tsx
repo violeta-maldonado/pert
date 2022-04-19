@@ -1,15 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Grid from '@mui/material/Grid';
-import Image from 'next/image'
 import AppBarM from '../components/appBar';
+import HomeHeader from '../components/homeHeader';
 import ProjectData from '../components/projectData';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import TablePert from '../components/table';
 
 const Home: NextPage = () => {
-  const logo ='/static/pert.jpg';
   return (
     <div >
       <Head>
@@ -19,19 +17,7 @@ const Home: NextPage = () => {
       </Head>
       <main >
         <AppBarM title='VM'/>
-        <Grid container spacing={2}>
-          <Grid item xs={9}>
-            <h1 className='title'>COST ESTIMATION OF A PROJECT</h1>
-          </Grid>
-          <Grid item xs={3}>
-            <Image 
-              src={logo} 
-              width={200}
-              height={100}
-              layout="fixed"
-            />
-          </Grid>
-        </Grid>
+        <HomeHeader></HomeHeader>
         <ProjectData/>
         <Toolbar>
           <h5 className='subtitle'>ACTIVITIES</h5>

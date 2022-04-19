@@ -1,8 +1,6 @@
 
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
+import { Avatar, Toolbar, Typography }from '@mui/material';
 
 interface IAppBarM {
     title?: string;
