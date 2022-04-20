@@ -1,52 +1,80 @@
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import {Box, TextField, Grid, Button, Typography} from '@mui/material';
+import { useState } from 'react';
+import ProjectContext from 'src/context/ProjectContext';
 
-const ProjectData = () => {
+interface IProjectData {
+  loadE?: Function;
+  exportE?: Function;
+}
+
+const ProjectData = (props: IProjectData) => {
+  const [projectname ,setProjectName] = useState("");
+  const [cost ,setCost] = useState(0);
+  const projectData = {
+    name:projectname,
+    cost:cost,
+  }
+  console.log(projectData)
   return (
-    <Grid container spacing={1}>
-      <Grid item xs={6}>
-        <Box sx={{ border: '3px solid #027B76', padding: '5px', margin: '10px' }}>
-          <Typography className='subtitle'>Project Data</Typography>
-          <div>
-            <Toolbar>
-              <Typography variant="h4" padding={0} className='text1' >
-                Project name:
+    <ProjectContext.Provider value={projectData}>
+      <Grid container spacing={1}>
+        <Grid item xs={6} sm={6}>
+          <Box sx={{ border: '3px solid #027B76', padding: '10px', margin: '10px' }}>
+            <Typography color='#027B76' sx={{fontSize:'18px' }}>
+              Project Data
+            </Typography>
+            <Grid item xs= {12} sm={6}>
+              <Typography sx={{fontSize:'16px' }}>
+                  Project name:
               </Typography>
-              <input
-                id="name"
-                style={{ height: 30 }}
+              <TextField
+                variant="outlined"
+                size='small'
+                margin="normal"
+                required
+                fullWidth
+                id='name'
+                name='Project name'
+                onChange = {(e) => setProjectName(e.target.value)}
               />
-            </Toolbar>
-            <Toolbar>
-              <Typography variant="h4" className='text1' >
+            </Grid>
+            <div>
+              <Typography sx={{fontSize:'16px' }} >
                 Cost per hour:  $
               </Typography>
-              <input
-                id="cost"
-                style={{ height: 30 }}
+              <TextField
+                variant="outlined"
+                size='small'
+                margin="normal"
+                required
+                fullWidth
+                type='number'
+                id='cost'
+                name='cost'
+                onChange = {(e) => {
+                  setCost(parseInt(e.target.value))
+                }}
               />
-            </Toolbar>
+            </div>
+          </Box>
+        </Grid>
+        <Grid item xs={4} sm={6} sx={{alignItems:'center'}}>
+          <div>
+            <Button
+              sx={{borderRadius:'15px', padding:'10px', marginBottom:'10px',color:'white' , backgroundColor:'#060C3E'}}
+              >
+              Load EXCEL
+            </Button>
           </div>
-        </Box>
+          <div>
+            <Button
+              sx={{borderRadius:'15px', padding:'10px',color:'white' , backgroundColor:'#060C3E'}}>
+              Export EXCEL
+            </Button>
+          </div>
+        </Grid>
       </Grid>
-      <Grid item xs={4}>
-        <div>
-          <Button
-            className='button1'>
-            Load EXCEL
-          </Button>
-        </div>
-        <div>
-          <Button
-            className='button1'>
-            Export EXCEL
-          </Button>
-        </div>
-      </Grid>
-    </Grid>
+    </ProjectContext.Provider>
   );
 }
 export default ProjectData

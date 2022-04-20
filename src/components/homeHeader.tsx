@@ -4,18 +4,17 @@ import { Grid, Toolbar, Typography }from '@mui/material';
 
 const HomeHeader = () => {
     return (
-      <Grid container spacing={2}>
-        <Grid item xs={11} sm={6}>
+      <Grid container spacing={0}>
+        <Grid item xs={6} sm={9} sx={{alignContent: 'center'}}>
           <Typography 
             align='center'
             color='#0C3640'
-            variant='h2'
+            sx={{fontSize:'36px'}}
           >
             COST ESTIMATION OF A PROJECT
           </Typography>
         </Grid>
-        <Grid item xs={1} sm={6}>
-          <Typography>HOLI BOLI :3</Typography>
+        <Grid item xs={6} sm={3} sx={{justifyContent:'center', display:'flex'}}>
           <Image
             src={'/static/pert.jpg'}
             width={200}

@@ -3,11 +3,11 @@ import Head from 'next/head'
 import AppBarM from '../components/appBar';
 import HomeHeader from '../components/homeHeader';
 import ProjectData from '../components/projectData';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import TablePert from '../components/table';
+import Activities from 'src/components/activities';
+import Detail from 'src/components/detail';
 
 const Home: NextPage = () => {
+  
   return (
     <div >
       <Head>
@@ -16,15 +16,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-        <AppBarM title='VM'/>
+        <AppBarM title=' VM'/>
         <HomeHeader></HomeHeader>
-        <ProjectData/>
-        <Toolbar>
-          <h5 className='subtitle'>ACTIVITIES</h5>
-          <Button className='button3'>
-            +
-          </Button>
-        </Toolbar>
+        <ProjectData />
+        <Activities/>
+        <Detail/>
         
       </main>
     </div>
