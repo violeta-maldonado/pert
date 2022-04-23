@@ -1,6 +1,5 @@
 import {Box, TextField, Grid, Button, Typography} from '@mui/material';
 import { useState } from 'react';
-import ProjectContext from 'src/context/ProjectContext';
 
 interface IProjectData {
   loadE?: Function;
@@ -16,7 +15,6 @@ const ProjectData = (props: IProjectData) => {
   }
   console.log(projectData)
   return (
-    <ProjectContext.Provider value={projectData}>
       <Grid container spacing={1}>
         <Grid item xs={6} sm={6}>
           <Box sx={{ border: '3px solid #027B76', padding: '10px', margin: '10px' }}>
@@ -74,7 +72,6 @@ const ProjectData = (props: IProjectData) => {
           </div>
         </Grid>
       </Grid>
-    </ProjectContext.Provider>
   );
 }
 export default ProjectData

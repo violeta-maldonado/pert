@@ -1,6 +1,6 @@
 
 import Image from 'next/image'
-import { Grid, Toolbar, Typography }from '@mui/material';
+import { Grid, Typography }from '@mui/material';
 
 const HomeHeader = () => {
     return (

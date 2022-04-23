@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import {TextField, Box, Button, Typography, styled } from '@mui/material';
+import { Button, Typography, styled } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import data from "../data.json";
-import { nanoid } from "nanoid";
+import AddActivity from './addActivity';
+import { string } from 'yup';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -20,25 +20,24 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const Activities = () => {
-  const [activityData, setActivityData] = useState(data);
+  const [activityData, setActivityData] = useState([]);
   const [addData, setAddData] = useState({
-    name:'',
-    optimistic:'',
-    mostLikely:'',
-    pessimistic:''
+    name:string,
+    optimistic:string,
+    mostLikely:string,
+    pessimistic:string
   });
   // TextField fuction
-  const handleAddFormChange = async e =>{
+  let handleAddFormChange = (e):void =>{
     e.preventDefault();
     const fieldName = e.target.getAttribute('name');
     const fieldValue = e.target.value;
     const newFormData = { ...addData};
     newFormData[fieldName] = fieldValue;
-
     setAddData(newFormData);
   }
   // Add button fuction
-  const handleFormSubmit = async e =>{
+  let handleFormSubmit = (e): void =>{
     e.preventDefault();
     const newActivity = {
       name:addData.name,
@@ -100,49 +99,7 @@ const Activities = () => {
           </Table>
         </TableContainer>
       </div>
-      <Box sx={{margin:'20px'}}>
-        <Typography color='#004379' sx={{fontSize: '16px'}}>Add Activity</Typography>
-        <form onSubmit={handleFormSubmit}>
-          <TextField
-            type="text"
-            name="name"
-            size='small'
-            placeholder="Enter name"
-            sx={{paddingRight:'10px'}}
-            onChange={handleAddFormChange}
-          /> 
-          <TextField
-            type="number"
-            name="optimistic"
-            size='small'
-            placeholder="Enter optimistic"
-            sx={{paddingRight:'10px'}}
-            onChange={handleAddFormChange}
-          />
-          <TextField
-            type="number"
-            name="mostLikely"
-            size='small'
-            placeholder="Enter most likely"
-            sx={{paddingRight:'10px'}}
-            onChange={handleAddFormChange}
-          />
-          <TextField
-            type="number"
-            name="pessimistic"
-            size='small'
-            placeholder="Enter pessimistic"
-            sx={{paddingRight:'10px'}}
-            onChange={handleAddFormChange}
-          />
-          <Button
-            type='submit'
-            sx={{borderRadius:'15px', padding:'10px', marginBottom:'10px',color:'white' , backgroundColor:'#060C3E'}}
-          >
-            Add
-          </Button>
-        </form>
-      </Box>
+      <AddActivity handleFormSubmit={handleFormSubmit} handleAddFormChange={handleAddFormChange}></AddActivity>
     </div>
   );
 }

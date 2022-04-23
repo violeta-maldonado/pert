@@ -6,7 +6,7 @@ interface IAppBarM {
   title?: string;
 }
 const AppBarM = (props: IAppBarM) => {
-  const { title = 'help' } = props;
+  const { title } = props;
   return (
     <AppBar position="static" style={{ background: '#027B76' }}>
       <Toolbar variant="dense">
