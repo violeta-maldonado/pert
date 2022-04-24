@@ -1,19 +1,16 @@
 import {Box, TextField, Grid, Button, Typography} from '@mui/material';
-import { useState } from 'react';
+import { useDispatch } from 'src/redux/store';
+import updateName from 'src/redux/store/dataProject/action';
+import updateCost from 'src/redux/store/dataProject/action';
 
-interface IProjectData {
-  loadE?: Function;
-  exportE?: Function;
-}
+// interface IProjectData {
+//   loadE?: Function;
+//   exportE?: Function;
+// }
 
-const ProjectData = (props: IProjectData) => {
-  const [projectname ,setProjectName] = useState("");
-  const [cost ,setCost] = useState(0);
-  const projectData = {
-    name:projectname,
-    cost:cost,
-  }
-  console.log(projectData)
+const ProjectData = () => {
+  const dispatch = useDispatch();
+  
   return (
       <Grid container spacing={1}>
         <Grid item xs={6} sm={6}>
@@ -33,7 +30,9 @@ const ProjectData = (props: IProjectData) => {
                 fullWidth
                 id='name'
                 name='Project name'
-                onChange = {(e) => setProjectName(e.target.value)}
+                onChange = {(e) => {
+                  dispatch(updateName(e.target.value))
+                }}
               />
             </Grid>
             <div>
@@ -50,7 +49,7 @@ const ProjectData = (props: IProjectData) => {
                 id='cost'
                 name='cost'
                 onChange = {(e) => {
-                  setCost(parseInt(e.target.value))
+                  dispatch(updateCost(e.target.value))
                 }}
               />
             </div>
@@ -74,4 +73,4 @@ const ProjectData = (props: IProjectData) => {
       </Grid>
   );
 }
-export default ProjectData
+export default (ProjectData)
