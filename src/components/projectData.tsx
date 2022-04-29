@@ -1,7 +1,6 @@
 import {Box, TextField, Grid, Button, Typography} from '@mui/material';
 import { useDispatch } from 'src/redux/store';
-import updateName from 'src/redux/store/dataProject/action';
-import updateCost from 'src/redux/store/dataProject/action';
+import { nameProject , costProject} from 'src/redux/slices/data-project';
 
 // interface IProjectData {
 //   loadE?: Function;
@@ -31,7 +30,7 @@ const ProjectData = () => {
                 id='name'
                 name='Project name'
                 onChange = {(e) => {
-                  dispatch(updateName(e.target.value))
+                  dispatch(nameProject(e.target.value))
                 }}
               />
             </Grid>
@@ -49,7 +48,7 @@ const ProjectData = () => {
                 id='cost'
                 name='cost'
                 onChange = {(e) => {
-                  dispatch(updateCost(e.target.value))
+                  dispatch(costProject(parseInt(e.target.value)))
                 }}
               />
             </div>

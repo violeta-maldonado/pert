@@ -16,6 +16,7 @@ const AddActivity = (props: IAppActivity) => {
         <TextField
           type="text"
           name="name"
+          label="Activity name"
           size='small'
           placeholder="Enter name"
           sx={{ paddingRight: '10px' }}
@@ -23,6 +24,7 @@ const AddActivity = (props: IAppActivity) => {
         />
         <TextField
           type="number"
+          label="Optimistic"
           name="optimistic"
           size='small'
           placeholder="Enter optimistic"
@@ -31,6 +33,7 @@ const AddActivity = (props: IAppActivity) => {
         />
         <TextField
           type="number"
+          label="Most Likely"
           name="mostLikely"
           size='small'
           placeholder="Enter most likely"
@@ -39,6 +42,7 @@ const AddActivity = (props: IAppActivity) => {
         />
         <TextField
           type="number"
+          label="Pessimistic"
           name="pessimistic"
           size='small'
           placeholder="Enter pessimistic"

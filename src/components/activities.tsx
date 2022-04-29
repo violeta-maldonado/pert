@@ -8,6 +8,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import AddActivity from './addActivity';
 import { string } from 'yup';
+import { useDispatch } from 'src/redux/store';
+import { activityProject } from 'src/redux/slices/data-project';
+import { number } from 'yup/lib/locale';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -20,18 +23,20 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const Activities = () => {
+  const dispatch = useDispatch();
   const [activityData, setActivityData] = useState([]);
   const [addData, setAddData] = useState({
     name:string,
-    optimistic:string,
-    mostLikely:string,
-    pessimistic:string
+    optimistic:number,
+    mostLikely:number,
+    pessimistic:number
   });
   // TextField fuction
   let handleAddFormChange = (e):void =>{
     e.preventDefault();
-    const fieldName = e.target.getAttribute('name');
-    const fieldValue = e.target.value;
+    const fieldName:string = e.target.getAttribute('name');
+    let fieldValue ;
+    if(fieldName =='name'){fieldValue= e.target.value}else{fieldValue=parseInt(e.target.value)};
     const newFormData = { ...addData};
     newFormData[fieldName] = fieldValue;
     setAddData(newFormData);
@@ -46,15 +51,17 @@ const Activities = () => {
       pessimistic:addData.pessimistic,
     };
 
-    const newActivitys = [...activityData, newActivity];
-    setActivityData(newActivitys);
+    const newActivities = [...activityData, newActivity];
+    setActivityData(newActivities);
+    dispatch(activityProject(newActivities))
   }
   // Delete button fuction
   const handleDeleteClick = (activityName) => {
-    const newActivitys = [...activityData];
+    const newActivities = [...activityData];
     const index = activityData.findIndex((activity) => activity.name === activityName);
-    newActivitys.splice(index, 1);
-    setActivityData(newActivitys);
+    newActivities.splice(index, 1);
+    setActivityData(newActivities);
+    dispatch(activityProject(newActivities))
   };
   return (
     <div>
