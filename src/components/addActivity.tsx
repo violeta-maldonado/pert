@@ -19,39 +19,39 @@ const AddActivity = (props: IAppActivity) => {
           label="Activity name"
           size='small'
           placeholder="Enter name"
-          sx={{ paddingRight: '10px' }}
+          sx={{ paddingRight: '10px' , marginTop:'10px'}}
           onChange={handleAddFormChange}
         />
         <TextField
           type="number"
-          label="Optimistic"
+          label="Optimistic duration (hours)"
           name="optimistic"
           size='small'
           placeholder="Enter optimistic"
-          sx={{ paddingRight: '10px' }}
+          sx={{ paddingRight: '10px' , marginTop:'10px'}}
           onChange={handleAddFormChange}
         />
         <TextField
           type="number"
-          label="Most Likely"
+          label="Most Likely duration (hours)"
           name="mostLikely"
           size='small'
           placeholder="Enter most likely"
-          sx={{ paddingRight: '10px' }}
+          sx={{ paddingRight: '10px' , marginTop:'10px'}}
           onChange={handleAddFormChange}
         />
         <TextField
           type="number"
-          label="Pessimistic"
+          label="Pessimistic duration (hours)"
           name="pessimistic"
           size='small'
           placeholder="Enter pessimistic"
-          sx={{ paddingRight: '10px' }}
+          sx={{ paddingRight: '10px' , marginTop:'10px'}}
           onChange={handleAddFormChange}
         />
         <Button
           type='submit'
-          sx={{ borderRadius: '15px', padding: '10px', marginBottom: '10px', color: 'white', backgroundColor: '#060C3E' }}
+          sx={{ borderRadius: '15px', padding: '10px', marginBottom: '10px', color: 'white', backgroundColor: '#0B132B','&:hover':{backgroundColor: '#0B132B'} }}
         >
           Add
         </Button>

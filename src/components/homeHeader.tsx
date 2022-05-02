@@ -16,7 +16,7 @@ const HomeHeader = () => {
         </Grid>
         <Grid item xs={6} sm={3} sx={{justifyContent:'center', display:'flex'}}>
           <Image
-            src={'/static/pert.jpg'}
+            src={'/static/pert.png'}
             width={200}
             height={100}
             layout="fixed"

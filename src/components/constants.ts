@@ -25,7 +25,7 @@ export const optionsLine: ApexOptions = {
   },
   title: {
     text: "Graph PERT",
-    align: "center"
+    align: "center",
   },
   grid: {
     borderColor: "#e7e7e7",
@@ -48,12 +48,12 @@ export const optionsLine: ApexOptions = {
       "3σ"
     ],
     title: {
-      text: "varianza"
+      text: "Variance"
     }
   },
   yaxis: {
     title: {
-      text: "Visitas totales"
+      text: "Total hours"
     },
     min: 0,
     max: 100
@@ -62,7 +62,5 @@ export const optionsLine: ApexOptions = {
     position: "top",
     horizontalAlign: "left",
     floating: false
-    //offsetY: -25
-    //offsetX: -5
   }
 };

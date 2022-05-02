@@ -11,9 +11,11 @@ const Detail:FC = () => {
   const seriesData = [
     {
         name: "pertLine",
-        data: graph
+        data: graph,
+        color: '#8E443D'
       },
   ];
+  
   return (
     <div>
       <Typography color='#027B76' sx={{fontSize:'18px' , margin:'20px'}}>

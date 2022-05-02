@@ -9,13 +9,15 @@ import TableRow from '@mui/material/TableRow';
 import AddActivity from './addActivity';
 import { string } from 'yup';
 import { useDispatch } from 'src/redux/store';
-import { activityProject } from 'src/redux/slices/data-project';
+import { useSelector } from 'src/redux/store';
+import { activityProject, dataGraph, dataActivity } from 'src/redux/slices/data-project';
 import { number } from 'yup/lib/locale';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: '#BDC6C6',
-    color: '#000000',
+    backgroundColor: '#1C2541',
+    color: '#FFFFFF',
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -54,6 +56,8 @@ const Activities = () => {
     const newActivities = [...activityData, newActivity];
     setActivityData(newActivities);
     dispatch(activityProject(newActivities))
+    dispatch(dataGraph(newActivities))
+    dispatch(dataActivity(newActivities))
   }
   // Delete button fuction
   const handleDeleteClick = (activityName) => {
@@ -62,6 +66,8 @@ const Activities = () => {
     newActivities.splice(index, 1);
     setActivityData(newActivities);
     dispatch(activityProject(newActivities))
+    dispatch(dataGraph(newActivities))
+    dispatch(dataActivity(newActivities))
   };
   return (
     <div>
@@ -71,7 +77,7 @@ const Activities = () => {
       </Typography>
       </div>
       <div>
-        <TableContainer sx={{margin:'15px',border: '1px solid #000000' ,maxWidth: '95%'}}>
+        <TableContainer sx={{margin:'15px',border: '1px solid #1C2541' ,maxWidth: '95%'}}>
           <Table  aria-label="customized table">
             <TableHead>
               <TableRow>
@@ -85,7 +91,7 @@ const Activities = () => {
             <TableBody>
               {activityData.map((activity) => (
                 <TableRow
-                  key={activity.name}
+                  key={(activity.length + 1)}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                   <TableCell component="th" scope="row">{activity.name}</TableCell>
@@ -94,7 +100,7 @@ const Activities = () => {
                   <TableCell align="center">{activity.pessimistic}</TableCell>
                   <TableCell align="right">
                     <Button
-                      sx={{borderRadius:'15px', paddingLeft:'10px',paddingRight:'10px', marginBottom:'10px',color:'white' , backgroundColor:'#D10404'}}
+                      sx={{borderRadius:'15px', paddingLeft:'10px',paddingRight:'10px', marginBottom:'10px',color:'white' , backgroundColor:'#8E443D', '&:hover':{backgroundColor: '#8E443D'}}}
                       onClick={() => handleDeleteClick(activity.name)}
                     >
                       Delete
