@@ -20,7 +20,7 @@ export interface Excel{
 const initialState: DataState = {
   name: "",
   cost:0,
-  pert:['0','0','0'],
+  pert:['0','0','0','0'],
   graph:[0,0,0,0,0,0],
   ExcelData:[]
 };

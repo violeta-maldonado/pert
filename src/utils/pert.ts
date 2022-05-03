@@ -4,10 +4,10 @@ interface  IPertCalculate{
   activity: Excel[];
 }
 // calcule the pert
-export const pertCalculate = (props: IPertCalculate) : string[] => {
+export const pertCalculate = (props: IPertCalculate) : (string)[] => {
   const {activity} = props;
   const variant: number[] = [];
-  const days: string[] = ['0','0','0'];
+  const days: (string)[] = ['0','0','0','0'];
   const graph: number[] = [0,0,0,0,0,0,0];
   let aux:number;
   let TotalDays:number = 0;
@@ -31,6 +31,7 @@ export const pertCalculate = (props: IPertCalculate) : string[] => {
     days[0]= TotalDays.toString() +' ± '+ trunc(desviationStandar.toString(),2);
     days[1]= TotalDays.toString() +' ± '+ trunc((2*desviationStandar).toString(),2);
     days[2]= TotalDays.toString() +' ± '+ trunc((3*desviationStandar).toString(),2);
+    days[3]= TotalDays.toString(); 
     return days;
   }
 }
