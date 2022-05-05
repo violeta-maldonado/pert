@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ReduxProvider store={store}>
+        {/* @ts-ignore */}
         <Component {...pageProps} />
       </ReduxProvider>
     </>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Typography, styled } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,11 +7,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import AddActivity from './addActivity';
-import { string } from 'yup';
+import { string, number } from 'yup';
 import { useDispatch } from 'src/redux/store';
 import { useSelector } from 'src/redux/store';
-import { activityProject, dataGraph, dataActivity } from 'src/redux/slices/data-project';
-import { number } from 'yup/lib/locale';
+import { activityProject, dataGraph, dataExcel } from 'src/redux/slices/data-project';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -26,7 +25,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const Activities = () => {
   const dispatch = useDispatch();
+  const { activity } = useSelector((state) => state.dataProject);
   const [activityData, setActivityData] = useState([]);
+  useEffect(()=>{
+    setActivityData(activity)
+  },[activity]);
   const [addData, setAddData] = useState({
     name:string,
     optimistic:number,
@@ -57,7 +60,7 @@ const Activities = () => {
     setActivityData(newActivities);
     dispatch(activityProject(newActivities))
     dispatch(dataGraph(newActivities))
-    dispatch(dataActivity(newActivities))
+    dispatch(dataExcel(newActivities))
   }
   // Delete button fuction
   const handleDeleteClick = (activityName) => {
@@ -67,7 +70,7 @@ const Activities = () => {
     setActivityData(newActivities);
     dispatch(activityProject(newActivities))
     dispatch(dataGraph(newActivities))
-    dispatch(dataActivity(newActivities))
+    dispatch(dataExcel(newActivities))
   };
   return (
     <div>

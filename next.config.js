@@ -10,6 +10,9 @@ const withTM = require('next-transpile-modules')([
 
 module.exports = withTM({
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

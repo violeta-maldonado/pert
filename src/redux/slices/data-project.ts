@@ -8,7 +8,8 @@ interface DataState {
   cost: number,
   pert: (string)[],
   graph: (number)[],
-  ExcelData: any[]
+  ExcelData: any[],
+  activity: any[]
 }
 export interface Excel{
   name: string,
@@ -22,7 +23,8 @@ const initialState: DataState = {
   cost:0,
   pert:['0','0','0','0'],
   graph:[0,0,0,0,0,0],
-  ExcelData:[]
+  ExcelData:[],
+  activity: []
 };
 
 export const slice = createSlice({
@@ -35,6 +37,9 @@ export const slice = createSlice({
     costProject: (state: DataState, action: PayloadAction<number>) => {
         state.cost = action.payload;
     },
+    activityTable: (state: DataState, action:PayloadAction<any[]>) => {
+      state.activity = action.payload
+    },
     activityProject: (state: DataState, action: PayloadAction<Excel[]>) => {
       const value = action.payload
       const days = pertCalculate({activity: value})
@@ -45,7 +50,7 @@ export const slice = createSlice({
       const dataGraph = graphCalculate({activity: value})
       state.graph = dataGraph;
     },
-    dataActivity:(state: DataState, action: PayloadAction<Excel[]>) => {
+    dataExcel:(state: DataState, action: PayloadAction<Excel[]>) => {
       const value = action.payload
       const aux:any[] = [] ;
       value.forEach(element => {
@@ -62,6 +67,6 @@ export const slice = createSlice({
 
 export const { reducer } = slice;
 
-export const { nameProject, costProject, activityProject, dataGraph ,dataActivity} = slice.actions
+export const { nameProject, costProject, activityProject, dataGraph ,dataExcel, activityTable} = slice.actions
 
 

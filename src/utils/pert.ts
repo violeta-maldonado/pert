@@ -19,7 +19,6 @@ export const pertCalculate = (props: IPertCalculate) : (string)[] => {
     activity.forEach(element => {
       // duratin activity
       aux = (element['optimistic']+ 4*(element['mostLikely'])+element['pessimistic'])/6 ;
-      console.log(aux);
       TotalDays = Math.round(aux + TotalDays);
       // varianza = desviation*desviation/36
       variant.push(((element['pessimistic']-element['optimistic'])/36)*(element['pessimistic']-element['optimistic']));

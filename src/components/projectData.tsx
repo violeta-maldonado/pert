@@ -3,7 +3,7 @@ import { useDispatch } from 'src/redux/store';
 import { useSelector } from 'src/redux/store';
 import { nameProject, costProject, dataGraph } from 'src/redux/slices/data-project';
 import * as xlsx from "xlsx";
-import { activityProject, Excel , dataActivity} from 'src/redux/slices/data-project';
+import { activityProject, Excel , activityTable} from 'src/redux/slices/data-project';
 
 const ProjectData = () => {
   const dispatch = useDispatch()
@@ -20,10 +20,9 @@ const ProjectData = () => {
         const sheetName = workbook.SheetNames[0];
         const worksheet = workbook.Sheets[sheetName];
         const json:Excel[] = xlsx.utils.sheet_to_json(worksheet);
-        console.log("data", json);
         dispatch(activityProject(json))
         dispatch(dataGraph(json))
-        dispatch(dataActivity(json))
+        dispatch(activityTable(json))
       };
       reader.readAsArrayBuffer(e.target.files[0]);
     }
@@ -86,16 +85,17 @@ const ProjectData = () => {
           <input
             type="file"
             name="upload"
-            id="myupload"
-            style={{display:'none'}}
+            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+            style={{ display: 'none' }}
+            id="contained-button-file"
             onChange={readUploadFile}
           />
-          <Button
-            sx={{ borderRadius: '15px', marginTop: '30px', padding: '10px', color: 'white', backgroundColor: '#0B132B' ,'&:hover':{backgroundColor: '#0B132B'}}}
-              onClick={exportToExcel}
-          >
-            Import EXCEL
-          </Button>
+          <label htmlFor="contained-button-file">
+            <Button variant="contained" component="span"
+              sx={{ borderRadius: '15px', marginTop: '30px', padding: '10px', color: 'white', backgroundColor: '#0B132B' ,'&:hover':{backgroundColor: '#0B132B'}}}>
+              Import EXCEL
+            </Button>
+          </label>
         </>
         <div>
           <Button
