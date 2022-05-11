@@ -24,8 +24,8 @@ In web you can perform the following actions.
  
  Once the activities have been entered, it will perform the calculation and display a table with the duration of the project in three percentages: 68%, 95% and 97%. Also, shows a graph with the duration.
  
-[<img src="pagePert.JPG" width="600"/>](images/pagePert.JPG)
-[<img src="pagePert2.JPG" width="600"/>](images/pagePert2.JPG)
+[<img src="public/pagePert.JPG" width="600"/>](public/pagePert.JPG)
+[<img src="public/pagePert2.JPG" width="600"/>](public/pagePert2.JPG)
 
 # Pert method
 Program Evaluation and Review Technique (PERT) is a method used to examine the tasks in a schedule and determine a Critical Path Method variation (CPM). It analyzes the time required to complete each task and its associated dependencies to determine the minimum time to complete a project. This helps in the creation of more realistic schedules and cost estimates.
@@ -33,3 +33,9 @@ Program Evaluation and Review Technique (PERT) is a method used to examine the t
 For this analysis: 
 Step 1: Determine optimistic, pessimistic, and most likely estimates duration for each activity
 Step 2: Calculate PERT Estimate using the PERT Formula
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- This project is licensed under the terms of the **[MIT license](LICENSE)**
