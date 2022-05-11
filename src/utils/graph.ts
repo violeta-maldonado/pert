@@ -19,7 +19,7 @@ export const graphCalculate = (props: IGraphCalculate): number[] => {
     activity.forEach(element => {
       // duratin activity
       aux = (element['optimistic'] + 4 * (element['mostLikely']) + element['pessimistic']) / 6;
-      TotalDays = aux + TotalDays;
+      TotalDays = Math.round(aux + TotalDays);
       // varianza = desviation*desviation/36
       variant.push(((element['pessimistic'] - element['optimistic']) / 36) * (element['pessimistic'] - element['optimistic']));
     })

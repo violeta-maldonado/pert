@@ -1,13 +1,14 @@
-[debug] [2022-05-02T21:49:44.531Z] ----------------------------------------------------------------------
-[debug] [2022-05-02T21:49:44.535Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2022-05-02T21:49:44.536Z] CLI Version:   10.7.2
-[debug] [2022-05-02T21:49:44.536Z] Platform:      win32
-[debug] [2022-05-02T21:49:44.536Z] Node Version:  v16.14.2
-[debug] [2022-05-02T21:49:44.537Z] Time:          Mon May 02 2022 16:49:44 GMT-0500 (hora de Ecuador)
-[debug] [2022-05-02T21:49:44.537Z] ----------------------------------------------------------------------
+[debug] [2022-05-06T17:11:44.596Z] ----------------------------------------------------------------------
+[debug] [2022-05-06T17:11:44.697Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-05-06T17:11:44.698Z] CLI Version:   10.7.2
+[debug] [2022-05-06T17:11:44.699Z] Platform:      win32
+[debug] [2022-05-06T17:11:44.699Z] Node Version:  v16.14.2
+[debug] [2022-05-06T17:11:45.753Z] Time:          Fri May 06 2022 12:11:44 GMT-0500 (hora de Ecuador)
+[debug] [2022-05-06T17:11:45.753Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-05-02T21:49:44.554Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-05-02T21:49:44.555Z] > authorizing via signed-in user (violetamaldonador@gmail.com)
+[debug] [2022-05-06T17:11:45.899Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-05-06T17:11:47.855Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-06T17:11:47.857Z] > authorizing via signed-in user (violetamaldonador@gmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -19,6 +20,8 @@ You're about to initialize a Firebase project in this directory:
 
   C:\Users\abi_9\VisualStudio\React\pert
 
+[debug] [2022-05-06T17:11:49.651Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-05-06T17:11:49.653Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
 [info] 
 === Project Setup
 [info] 
@@ -27,72 +30,28 @@ You're about to initialize a Firebase project in this directory:
 [info] but for now we'll just set up a default project.
 [info] 
 [info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
-[debug] [2022-05-02T21:53:27.129Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2022-05-02T21:53:27.130Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2022-05-06T17:18:54.199Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-05-06T17:18:54.200Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2022-05-02T21:53:27.378Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 02 May 2022 21:53:25 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-05-02T21:53:27.567Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
- {"projectId":"calc-pert-app","name":"calc-pert-app"}
-[debug] [2022-05-02T21:53:28.235Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 02 May 2022 21:53:26 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=461","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-05-02T21:53:28.248Z] > refreshing access token with scopes: []
-[debug] [2022-05-02T21:53:28.249Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2022-05-02T21:53:28.442Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Mon, 02 May 2022 21:53:26 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-05-02T21:53:28.535Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 [none]
-[debug] [2022-05-02T21:53:29.111Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 200
-[debug] [2022-05-02T21:53:29.112Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 {"name":"operations/cp.6037986645170030983"}
-[debug] [2022-05-02T21:53:29.614Z] [Project Creation Poller] Retrying task index 0
-[debug] [2022-05-02T21:53:29.615Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 [none]
-[debug] [2022-05-02T21:53:30.198Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 200
-[debug] [2022-05-02T21:53:30.198Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 {"name":"operations/cp.6037986645170030983","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true}}
-[debug] [2022-05-02T21:53:31.210Z] [Project Creation Poller] Retrying task index 0
-[debug] [2022-05-02T21:53:31.211Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 [none]
-[debug] [2022-05-02T21:53:31.820Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 200
-[debug] [2022-05-02T21:53:31.821Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6037986645170030983 {"name":"operations/cp.6037986645170030983","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"14273396721","projectId":"calc-pert-app","lifecycleState":"ACTIVE","name":"calc-pert-app","createTime":"2022-05-02T21:53:26.697Z"}}
-[debug] [2022-05-02T21:53:31.824Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2022-05-02T21:53:31.825Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2022-05-02T21:53:32.015Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 02 May 2022 21:53:30 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-05-02T21:53:32.120Z] >>> HTTP REQUEST POST https://firebase.googleapis.com/v1beta1/projects/calc-pert-app:addFirebase  
- 
-[debug] [2022-05-02T21:53:34.283Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 02 May 2022 21:53:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-05-02T21:53:34.284Z] > refreshing access token with scopes: []
-[debug] [2022-05-02T21:53:34.284Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2022-05-02T21:53:34.489Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 02 May 2022 21:53:33 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2022-05-02T21:53:34.664Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk [none]
-[debug] [2022-05-02T21:53:35.159Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk 200
-[debug] [2022-05-02T21:53:35.159Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk {"name":"operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk"}
-[debug] [2022-05-02T21:53:35.661Z] [Add Firebase Poller] Retrying task index 0
-[debug] [2022-05-02T21:53:35.662Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk [none]
-[debug] [2022-05-02T21:53:36.051Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk 200
-[debug] [2022-05-02T21:53:36.051Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk {"name":"operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk"}
-[debug] [2022-05-02T21:53:37.061Z] [Add Firebase Poller] Retrying task index 0
-[debug] [2022-05-02T21:53:37.062Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk [none]
-[debug] [2022-05-02T21:53:37.542Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk 200
-[debug] [2022-05-02T21:53:37.542Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk {"name":"operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk"}
-[debug] [2022-05-02T21:53:39.554Z] [Add Firebase Poller] Retrying task index 0
-[debug] [2022-05-02T21:53:39.555Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk [none]
-[debug] [2022-05-02T21:53:39.919Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk 200
-[debug] [2022-05-02T21:53:39.919Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk {"name":"operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk"}
-[debug] [2022-05-02T21:53:43.919Z] [Add Firebase Poller] Retrying task index 0
-[debug] [2022-05-02T21:53:43.919Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk [none]
-[debug] [2022-05-02T21:53:44.368Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk 200
-[debug] [2022-05-02T21:53:44.369Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk {"name":"operations/workflows/MmEzM2Q2YjctN2E0ZS00NTY5LTllYzAtMjVkZTAwZDBhYjBk","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"calc-pert-app","projectNumber":"14273396721","displayName":"calc-pert-app","name":"projects/calc-pert-app","resources":{"hostingSite":"calc-pert-app"}}}
-[info] 
-[info] === Your Firebase project is ready! ===
-[info] 
-[info] Project information:
-[info]    - Project ID: calc-pert-app
-[info]    - Project Name: calc-pert-app
-[info] 
-[info] Firebase console is available at
-[info] https://console.firebase.google.com/project/calc-pert-app/overview
-[info] i  Using project calc-pert-app (calc-pert-app) 
-[info] 
-=== Hosting Setup
-[info] 
-[info] Your public directory is the folder (relative to your project directory) that
-[info] will contain Hosting assets to be uploaded with firebase deploy. If you
-[info] have a build process for your assets, use your build's output directory.
-[info] 
+[debug] [2022-05-06T17:18:54.884Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Fri, 06 May 2022 17:18:53 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-06T17:18:55.082Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"pert-app-okey","name":"Y"}
+[debug] [2022-05-06T17:18:55.641Z] <<< HTTP RESPONSE 400 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Fri, 06 May 2022 17:18:54 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=352","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-06T17:18:55.642Z] <<< HTTP RESPONSE BODY {"error":{"code":400,"message":"field [display_name] has issue [project display name must be at least 4 characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"display_name","description":"project display name must be at least 4 characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2022-05-06T17:18:55.675Z] FirebaseError: HTTP Error: 400, field [display_name] has issue [project display name must be at least 4 characters]
+    at module.exports (C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at Request._callback (C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:41:35)
+    at Request.self.callback (C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:526:28)
+    at Request.emit (node:domain:475:12)
+    at Request.<anonymous> (C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:526:28)
+    at Request.emit (node:domain:475:12)
+    at IncomingMessage.<anonymous> (C:\Users\abi_9\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:645:28)
+    at IncomingMessage.emit (node:events:538:35)
+    at IncomingMessage.emit (node:domain:475:12)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
