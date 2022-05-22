@@ -59,7 +59,7 @@ export const slice = createSlice({
           pessimistic:element.pessimistic})
       })
       const days = pertCalculate({activity: value})
-      aux.push({porcentage:'68 %', hours:days[0]},{porcentage:'95 %', hours:days[1]},{porcentage:'97 %', hours:days[2]});
+      aux.push({},{name:"Porcentage",optimistic:"Hours"},{name:'68 %', optimistic:days[0]},{name:'95 %', optimistic:days[1]},{name:'97 %', optimistic:days[2]});
       state.ExcelData = aux ;
     },
   },

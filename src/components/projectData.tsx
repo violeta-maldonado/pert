@@ -9,6 +9,7 @@ const ProjectData = () => {
   const dispatch = useDispatch()
   const { name, ExcelData} = useSelector((state) => state.dataProject);
   
+
   // Button to import Excel
   const readUploadFile = (e) => {
     e.preventDefault();
@@ -32,8 +33,22 @@ const ProjectData = () => {
   const exportToExcel = () =>{
     const wb = xlsx.utils.book_new();
     const ws = xlsx.utils.json_to_sheet(ExcelData);
+    console.log(ExcelData);
     xlsx.utils.book_append_sheet(wb,ws,name);
     xlsx.writeFile(wb, "ExcelPer.xlsx" );
+  }
+  // Button to export Template
+  const exportTemplate = () =>{
+    const Excel = [{},{
+      name: "",
+      mostLikely: "",
+      optimistic: "",
+      pessimistic:""
+    }];
+    const wb = xlsx.utils.book_new();
+    const ws = xlsx.utils.json_to_sheet(Excel);
+    xlsx.utils.book_append_sheet(wb,ws,name);
+    xlsx.writeFile(wb, "TemplateActivity.xlsx" );
   }
 
   return (
@@ -96,6 +111,12 @@ const ProjectData = () => {
               Import EXCEL
             </Button>
           </label>
+            <Button variant="contained" component="span"
+              sx={{ borderRadius: '10px', marginLeft: '10px', marginTop: '30px', padding: '5px', color: 'white', backgroundColor: '#9B9B9B' ,'&:hover':{backgroundColor: '#9B9B9B'}}}
+              onClick={exportTemplate}
+              >
+              Download Template
+            </Button>
         </>
         <div>
           <Button

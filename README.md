@@ -46,7 +46,7 @@ This project was coded using the next.js framework with Typescript. [DEMO](https
 git clone https://github.com/violeta-maldonado/pert.git
 ```
 ## Packages
-Install the packages used in the project:
+The following packages are used in this project:
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [MUI5](https://mui.com/getting-started/installation/)
 - [Chart js](https://www.chartjs.org/docs/latest/api/)
@@ -54,12 +54,12 @@ Install the packages used in the project:
 
 To install the packages use the next command
 ```sh
-yarn add  @package
+yarn install
 ```
 ## Run the program
 
 ```sh
-yarn run dev 
+yarn dev
 ```
 
 You can see the page in your local server http://localhost:3000
